@@ -35,7 +35,7 @@ function PageHero() {
         >
           <Camera size={13} className="text-[#F5A623]" />
           <span className="text-[#F5A623] text-sm font-medium tracking-wide">
-            100 Photos · 3 Vessels
+            {t("badge")}
           </span>
         </motion.div>
 

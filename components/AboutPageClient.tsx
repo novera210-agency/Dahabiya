@@ -55,7 +55,7 @@ function Hero() {
           className="inline-flex items-center gap-2 bg-[#F5A623]/15 border border-[#F5A623]/30 rounded-full px-4 py-1.5 mb-6"
         >
           <Anchor size={12} className="text-[#F5A623]" />
-          <span className="text-[#F5A623] text-sm font-medium tracking-wide">Est. 19th Century · Nile, Egypt</span>
+          <span className="text-[#F5A623] text-sm font-medium tracking-wide">{t("hero_badge")}</span>
         </motion.div>
 
         <motion.h1
@@ -84,10 +84,10 @@ function Hero() {
           className="flex flex-wrap gap-px mt-12 border border-white/10 rounded-2xl overflow-hidden w-fit"
         >
           {[
-            { value: "19th C", label: "Origins" },
-            { value: "3",      label: "Vessels" },
-            { value: "7",      label: "Days" },
-            { value: "420km",  label: "Luxor → Aswan" },
+            { value: "19th C", label: t("stats.origins") },
+            { value: "3",      label: t("stats.vessels") },
+            { value: "7",      label: t("stats.days") },
+            { value: "420km",  label: t("stats.route") },
           ].map((s, i) => (
             <div key={i} className="bg-white/5 backdrop-blur-sm px-6 py-4 text-center min-w-[100px]">
               <div className="text-[#F5A623] text-xl font-bold">{s.value}</div>
@@ -124,7 +124,7 @@ function OriginSection() {
           >
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-[#F5A623]" />
-              <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">The Story</span>
+              <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">{t("story_badge")}</span>
             </motion.div>
 
             <motion.div
@@ -166,7 +166,7 @@ function OriginSection() {
               />
               {/* Caption overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#060d2e]/80 to-transparent px-6 py-6">
-                <p className="text-white font-semibold">Queen Cleopatra Dahabiya</p>
+                <p className="text-white font-semibold">{t("vessels.queen.name")} Dahabiya</p>
                 <p className="text-white/50 text-sm">Luxor – Aswan, Egypt</p>
               </div>
             </div>
@@ -193,10 +193,10 @@ function OriginSection() {
         <div className="absolute inset-0 flex items-center px-8 md:px-20">
           <blockquote className="max-w-xl">
             <p className="text-3xl md:text-4xl font-light text-white italic leading-snug">
-              "Sailing is not merely a journey — it is a return to something ancient and true."
+              "{t("quote_text")}"
             </p>
             <footer className="mt-5 text-[#F5A623] text-sm font-medium tracking-widest uppercase">
-              — The Nile, Egypt
+              {t("quote_footer")}
             </footer>
           </blockquote>
         </div>
@@ -231,14 +231,14 @@ function FeaturesSection() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-px bg-[#F5A623]" />
-              <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">On Board</span>
+              <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">{t("on_board_badge")}</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
               {t("features_title")}
             </h2>
           </div>
           <p className="text-white/30 text-sm max-w-xs md:text-right leading-relaxed">
-            Every detail considered so you can be fully present in the moment.
+            {t("features_desc")}
           </p>
         </motion.div>
 
@@ -306,28 +306,15 @@ function FeaturesSection() {
 }
 
 /* ─── 4. THREE VESSELS ─── */
-const vessels = [
-  {
-    name: "Royal Cleopatra",
-    caption: "Our flagship — the grandest of the three.",
-    src: "/royal-cleopatra/royal-3.jpg",
-    accent: "#F5A623",
-  },
-  {
-    name: "Princess Cleopatra",
-    caption: "Elegant and intimate, perfect for couples.",
-    src: "/princess-cleopatra/princess-1.jpg",
-    accent: "#1B2785",
-  },
-  {
-    name: "Queen Cleopatra",
-    caption: "Refined simplicity for the discerning traveller.",
-    src: "/queen-cleopatra/queen-1.jpg",
-    accent: "#F5A623",
-  },
-];
-
 function VesselsSection({ locale }: { locale: string }) {
+  const t = useTranslations("about");
+
+  const vessels = [
+    { key: "royal",    src: "/royal-cleopatra/royal-3.jpg",     accent: "#F5A623" },
+    { key: "princess", src: "/princess-cleopatra/princess-1.jpg", accent: "#1B2785" },
+    { key: "queen",    src: "/queen-cleopatra/queen-1.jpg",     accent: "#F5A623" },
+  ] as const;
+
   return (
     <section className="py-28 px-6 lg:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -340,17 +327,17 @@ function VesselsSection({ locale }: { locale: string }) {
         >
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-[#F5A623]" />
-            <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">The Fleet</span>
+            <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">{t("fleet_badge")}</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-[#1B2785] leading-tight max-w-xl">
-            Three Vessels, One River
+            {t("fleet_title")}
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-5">
           {vessels.map((v, i) => (
             <motion.div
-              key={v.name}
+              key={v.key}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -359,7 +346,7 @@ function VesselsSection({ locale }: { locale: string }) {
             >
               <Image
                 src={v.src}
-                alt={v.name}
+                alt={t(`vessels.${v.key}.name`)}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                 quality={85}
@@ -376,14 +363,14 @@ function VesselsSection({ locale }: { locale: string }) {
               <div className="absolute bottom-0 left-0 right-0 p-7">
                 <div className="w-8 h-0.5 mb-4 transition-all duration-300 group-hover:w-14"
                   style={{ background: "#F5A623" }} />
-                <h3 className="text-2xl font-bold text-white mb-1">{v.name}</h3>
-                <p className="text-white/50 text-sm">{v.caption}</p>
+                <h3 className="text-2xl font-bold text-white mb-1">{t(`vessels.${v.key}.name`)}</h3>
+                <p className="text-white/50 text-sm">{t(`vessels.${v.key}.caption`)}</p>
 
                 <Link
                   href={`/${locale}/gallery`}
                   className="inline-flex items-center gap-2 mt-5 text-[#F5A623] text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0"
                 >
-                  View Photos <ArrowRight size={14} />
+                  {t("view_photos")} <ArrowRight size={14} />
                 </Link>
               </div>
             </motion.div>
@@ -413,7 +400,7 @@ function EcoSection() {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px bg-[#F5A623]" />
-            <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">Our Philosophy</span>
+            <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">{t("philosophy_badge")}</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-8">
             {t("eco_title")}
@@ -423,9 +410,9 @@ function EcoSection() {
           </p>
           <div className="grid grid-cols-3 gap-4">
             {[
-              { value: "Wind", label: "Primary power" },
-              { value: "12",   label: "Max guests" },
-              { value: "0",    label: "Mass tourism" },
+              { value: t("eco_stats.power_value"), label: t("eco_stats.power_label") },
+              { value: "12",   label: t("eco_stats.guests_label") },
+              { value: "0",    label: t("eco_stats.tourism_label") },
             ].map((s) => (
               <div key={s.label} className="border border-white/10 rounded-2xl p-5 text-center">
                 <div className="text-2xl font-bold text-[#F5A623] mb-1">{s.value}</div>
@@ -456,7 +443,7 @@ function EcoSection() {
               <div className="w-10 h-10 rounded-full bg-[#F5A623]/20 border border-[#F5A623]/40 flex items-center justify-center">
                 <Leaf size={16} className="text-[#F5A623]" />
               </div>
-              <span className="text-white text-sm font-medium">Sail-powered · Minimal footprint</span>
+              <span className="text-white text-sm font-medium">{t("eco_caption")}</span>
             </div>
           </div>
         </motion.div>
@@ -489,11 +476,11 @@ function CTASection({ locale }: { locale: string }) {
       >
         <div className="w-12 h-px bg-[#F5A623] mx-auto mb-8" />
         <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-          Your Nile story<br />
-          <span className="text-[#F5A623] italic">starts here.</span>
+          {t("cta_title")}<br />
+          <span className="text-[#F5A623] italic">{t("cta_title_highlight")}</span>
         </h2>
         <p className="text-white/50 text-lg mb-10 max-w-md mx-auto">
-          Limited cabins. Unlimited horizon. Reserve your place on the river.
+          {t("cta_subtitle")}
         </p>
         <Link
           href={`/${locale}/contact`}

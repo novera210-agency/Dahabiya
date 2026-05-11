@@ -80,7 +80,7 @@ export function WhySectionClient() {
           <div className="inline-flex items-center gap-3 mb-7">
             <div className="h-px w-14 bg-gradient-to-r from-transparent to-[#F5A623]" />
             <span className="text-[#F5A623] text-[10px] font-bold tracking-[0.4em] uppercase">
-              The Experience
+              {t('badge')}
             </span>
             <div className="h-px w-14 bg-gradient-to-l from-transparent to-[#F5A623]" />
           </div>

@@ -76,12 +76,12 @@ export function SocialConnect() {
         {/* Heading */}
         <div className="inline-flex items-center gap-2 bg-[#F5A623]/10 border border-[#F5A623]/25 rounded-full px-4 py-1.5 mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" />
-          <span className="text-[#F5A623] text-sm font-medium tracking-wide">Follow Our Journey</span>
+          <span className="text-[#F5A623] text-sm font-medium tracking-wide">{t("badge")}</span>
         </div>
 
         <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
           {t("title")}{" "}
-          <span className="text-[#F5A623] italic">Sail?</span>
+          <span className="text-[#F5A623] italic">{t("title_suffix")}</span>
         </h2>
         <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
           {t("subtitle")}
@@ -103,7 +103,7 @@ export function SocialConnect() {
           }}
         >
           <p className="text-gray-500 text-sm uppercase tracking-widest mb-8">
-            Connect with us
+            {t("connect_label")}
           </p>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             {socialIcons.map(({ key, label, href, hoverBg, hoverShadow, svg }) => (

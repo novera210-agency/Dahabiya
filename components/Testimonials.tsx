@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { TestimonialsColumn, type Testimonial } from "@/components/ui/testimonials-columns-1";
 
 const testimonials: Testimonial[] = [
@@ -55,6 +56,7 @@ const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
 
 export default function Testimonials() {
+  const t = useTranslations("testimonials");
   return (
     <section className="py-24 px-4 bg-[#FDFAF5] relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -67,13 +69,13 @@ export default function Testimonials() {
         >
           <div className="inline-flex items-center gap-2 bg-[#F5A623]/15 border border-[#F5A623]/30 rounded-full px-4 py-1.5 mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" />
-            <span className="text-[#F5A623] text-sm font-medium tracking-wide">Guest Reviews</span>
+            <span className="text-[#F5A623] text-sm font-medium tracking-wide">{t("badge")}</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[#1B2785] mb-4">
-            Stories from the Nile
+            {t("title")}
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
-            Travellers from around the world share their Dahabiya journey — in their own words.
+            {t("subtitle")}
           </p>
         </motion.div>
 

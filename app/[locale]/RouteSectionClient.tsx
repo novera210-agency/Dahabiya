@@ -47,7 +47,7 @@ export function RouteSectionClient({ locale }: { locale: string }) {
           <div className="inline-flex items-center gap-3 mb-5">
             <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#1B2785]/40" />
             <span className="text-[#1B2785]/50 text-[10px] font-bold tracking-[0.38em] uppercase">
-              The Route
+              {t('badge')}
             </span>
             <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#1B2785]/40" />
           </div>
@@ -78,7 +78,7 @@ export function RouteSectionClient({ locale }: { locale: string }) {
                   </div>
                 </div>
                 <p className="font-bold text-[#1B2785] text-base leading-tight">{t('luxor')}</p>
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Departure</p>
+                <p className="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">{t('departure')}</p>
               </div>
 
               {/* ─── Animated wave ─── */}
@@ -261,7 +261,7 @@ export function RouteSectionClient({ locale }: { locale: string }) {
                   </div>
                 </div>
                 <p className="font-bold text-[#1B2785] text-base leading-tight">{t('aswan')}</p>
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">Arrival</p>
+                <p className="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">{t('arrival')}</p>
               </div>
             </div>
           </div>

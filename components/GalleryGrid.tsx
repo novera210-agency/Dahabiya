@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 type Boat = "all" | "royal" | "princess" | "queen";
 
@@ -27,24 +28,11 @@ const queenImages = Array.from({ length: 19 }, (_, i) => ({
 
 const allImages = [...royalImages, ...princessImages, ...queenImages];
 
-const tabs: { key: Boat; label: string; count: number }[] = [
-  { key: "all",      label: "All Boats",         count: allImages.length },
-  { key: "royal",    label: "Royal Cleopatra",    count: royalImages.length },
-  { key: "princess", label: "Princess Cleopatra", count: princessImages.length },
-  { key: "queen",    label: "Queen Cleopatra",    count: queenImages.length },
-];
-
 /* vary aspect ratio so the masonry grid feels alive */
 const aspectRatios = ["aspect-[4/3]", "aspect-square", "aspect-[3/4]", "aspect-[4/3]", "aspect-[16/9]"];
 function getAspect(i: number) {
   return aspectRatios[i % aspectRatios.length];
 }
-
-const boatLabels: Record<string, string> = {
-  royal: "Royal Cleopatra Dahabiya",
-  princess: "Princess Cleopatra Dahabiya",
-  queen: "Queen Cleopatra Dahabiya",
-};
 
 const containerVariants = {
   hidden: {},
@@ -61,8 +49,22 @@ const itemVariants = {
 };
 
 export default function GalleryGrid() {
+  const t = useTranslations("gallery");
   const [activeTab, setActiveTab] = useState<Boat>("royal");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const tabs: { key: Boat; label: string; count: number }[] = [
+    { key: "all",      label: t("tab_all"),      count: allImages.length },
+    { key: "royal",    label: t("tab_royal"),    count: royalImages.length },
+    { key: "princess", label: t("tab_princess"), count: princessImages.length },
+    { key: "queen",    label: t("tab_queen"),    count: queenImages.length },
+  ];
+
+  const boatLabels: Record<string, string> = {
+    royal:    t("tab_royal"),
+    princess: t("tab_princess"),
+    queen:    t("tab_queen"),
+  };
 
   const filtered =
     activeTab === "all"      ? allImages

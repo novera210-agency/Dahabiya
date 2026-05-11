@@ -15,6 +15,7 @@
     "cta_explore": "Explore Itinerary"
   },
   "why": {
+    "badge": "The Experience",
     "title": "Why Choose a Dahabiya?",
     "subtitle": "Far from the crowds of large cruise ships, a Dahabiya offers an experience unlike any other.",
     "cards": {
@@ -37,6 +38,9 @@
     }
   },
   "route": {
+    "badge": "The Route",
+    "departure": "Departure",
+    "arrival": "Arrival",
     "title": "The Journey",
     "subtitle": "Sailing between Luxor and Aswan, two of Egypt's most historically rich cities.",
     "luxor": "Luxor",
@@ -60,26 +64,60 @@
     "cta": "View Full Gallery"
   },
   "cta_band": {
-    "title": "Ready to Sail?",
+    "badge": "Follow Our Journey",
+    "title": "Ready to",
+    "title_suffix": "Sail?",
+    "connect_label": "Connect with us",
     "subtitle": "Limited cabins available. Secure your place on the Nile.",
     "button": "Make an Enquiry"
   },
   "about": {
+    "hero_badge": "Est. 19th Century · Nile, Egypt",
     "hero_title": "About the Dahabiya",
     "hero_subtitle": "A vessel with centuries of history and a new era of luxury.",
+    "stats": {
+      "origins": "Origins",
+      "vessels": "Vessels",
+      "days": "Days",
+      "route": "Luxor → Aswan"
+    },
+    "quote_text": "Sailing is not merely a journey — it is a return to something ancient and true.",
+    "quote_footer": "— The Nile, Egypt",
     "book_cta": "Book Your Dahabiya",
     "what_title": "What Is a Dahabiya?",
     "what_p1": "A Dahabiya is a traditional Egyptian sailing boat that dates back to the 19th century. The name is derived from the Arabic word for gold — a reflection of the gilded grandeur these vessels once carried.",
     "what_p2": "Once used exclusively by royalty, diplomats, and elite explorers, the Dahabiya today provides a rare and intimate way to discover the Nile. Unlike massive cruise ships, a Dahabiya carries only a small number of guests, ensuring a deeply personal experience.",
+    "story_badge": "The Story",
+    "on_board_badge": "On Board",
     "features_title": "Luxury Meets Simplicity",
+    "features_desc": "Every detail considered so you can be fully present in the moment.",
     "features": {
       "cabins": { "title": "Spacious Cabins", "desc": "Each cabin is beautifully designed with private en-suite facilities, large windows framing river views, and fine Egyptian cotton linens." },
       "deck": { "title": "Sun Deck", "desc": "Relax on the open upper deck as the Nile landscape unfolds — perfect for sunset cocktails or quiet morning reading." },
       "cuisine": { "title": "Exceptional Cuisine", "desc": "Our chef prepares freshly made Egyptian and international dishes daily, using the finest local ingredients." },
       "service": { "title": "High Staff Ratio", "desc": "With a dedicated crew serving only a handful of guests, every request is met with warmth and promptness." }
     },
+    "fleet_badge": "The Fleet",
+    "fleet_title": "Three Vessels, One River",
+    "vessels": {
+      "royal": { "name": "Royal Cleopatra", "caption": "Our flagship — the grandest of the three." },
+      "princess": { "name": "Princess Cleopatra", "caption": "Elegant and intimate, perfect for couples." },
+      "queen": { "name": "Queen Cleopatra", "caption": "Refined simplicity for the discerning traveller." }
+    },
+    "view_photos": "View Photos",
+    "philosophy_badge": "Our Philosophy",
     "eco_title": "Quieter & Greener",
-    "eco_text": "A Dahabiya relies primarily on wind and sail, making it one of the most environmentally respectful ways to travel the Nile. Quieter, cleaner, and more connected to nature."
+    "eco_text": "A Dahabiya relies primarily on wind and sail, making it one of the most environmentally respectful ways to travel the Nile. Quieter, cleaner, and more connected to nature.",
+    "eco_stats": {
+      "power_value": "Wind",
+      "power_label": "Primary power",
+      "guests_label": "Max guests",
+      "tourism_label": "Mass tourism"
+    },
+    "eco_caption": "Sail-powered · Minimal footprint",
+    "cta_title": "Your Nile story",
+    "cta_title_highlight": "starts here.",
+    "cta_subtitle": "Limited cabins. Unlimited horizon. Reserve your place on the river."
   },
   "itinerary": {
     "hero_title": "The Itinerary",
@@ -95,14 +133,25 @@
       "6": { "title": "Kom Ombo Temple", "desc": "Discover the unique double temple of Sobek and Haroeris, perched dramatically on the riverbank at sunset." },
       "7": { "title": "Arrival in Aswan", "desc": "Arrive in Aswan and disembark. Optional extension to Abu Simbel or the Nubian villages available." }
     },
+    "route_stops": ["Luxor", "Karnak", "Valley of Kings", "Villages", "Edfu", "Kom Ombo", "Aswan"],
     "included_title": "What's Included",
     "included": ["All meals on board", "Private guided excursions", "Airport/hotel transfers", "Entrance fees to listed sites", "Soft drinks, water & coffee"],
     "excluded_title": "Not Included",
     "excluded": ["International flights", "Travel insurance", "Alcoholic beverages", "Optional excursions", "Personal expenses"]
   },
+  "testimonials": {
+    "badge": "Guest Reviews",
+    "title": "Stories from the Nile",
+    "subtitle": "Travellers from around the world share their Dahabiya journey — in their own words."
+  },
   "gallery": {
+    "badge": "100 Photos · 3 Vessels",
     "hero_title": "Gallery",
-    "hero_subtitle": "The Nile through our lens."
+    "hero_subtitle": "The Nile through our lens.",
+    "tab_all": "All Boats",
+    "tab_royal": "Royal Cleopatra",
+    "tab_princess": "Princess Cleopatra",
+    "tab_queen": "Queen Cleopatra"
   },
   "contact": {
     "hero_title": "Book Your Journey",

@@ -63,7 +63,7 @@ function DahabiyaSVG({ active }: { active: boolean }) {
 /* ── HERO ── */
 function PageHero() {
   const t = useTranslations("itinerary");
-  const routeStops = ["Luxor", "Karnak", "Valley of Kings", "Villages", "Edfu", "Kom Ombo", "Aswan"];
+  const routeStops = t.raw("route_stops") as string[];
 
   return (
     <section className="relative min-h-[80vh] flex items-end pb-24 overflow-hidden">
