@@ -92,7 +92,7 @@ function PageHero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-8xl font-bold text-white leading-[0.9] mb-5 max-w-2xl"
+          className="text-4xl sm:text-6xl md:text-8xl font-bold text-white leading-[0.9] mb-5 max-w-2xl"
         >
           {t("hero_title")}
         </motion.h1>
@@ -101,7 +101,7 @@ function PageHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="text-white/50 text-xl max-w-md mb-10"
+          className="text-white/50 text-base sm:text-xl max-w-md mb-10"
         >
           {t("hero_subtitle")}
         </motion.p>
@@ -425,10 +425,10 @@ function BookCTA({ locale }: { locale: string }) {
         className="relative z-10 max-w-2xl mx-auto text-center"
       >
         <div className="w-12 h-px bg-[#F5A623] mx-auto mb-8" />
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
           Ready to <span className="text-[#F5A623] italic">sail?</span>
         </h2>
-        <p className="text-white/45 text-lg mb-10">
+        <p className="text-white/45 text-base sm:text-lg mb-10">
           Limited cabins available. Secure your place on the Nile.
         </p>
         <Link

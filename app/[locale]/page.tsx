@@ -39,7 +39,7 @@ function HeroSection({ locale }: { locale: string }) {
           <span className="text-[#F5A623] text-sm font-medium">{t("badge")}</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
           {t("title")}{" "}
           <span className="text-[#F5A623] italic">{t("titleHighlight")}</span>
         </h1>

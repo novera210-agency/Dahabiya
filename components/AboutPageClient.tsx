@@ -62,7 +62,7 @@ function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-6xl md:text-8xl font-bold text-white leading-[0.95] mb-6 max-w-3xl"
+          className="text-4xl sm:text-6xl md:text-8xl font-bold text-white leading-[0.95] mb-6 max-w-3xl"
         >
           {t("hero_title")}
         </motion.h1>
@@ -71,7 +71,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="text-white/60 text-xl max-w-lg leading-relaxed"
+          className="text-white/60 text-base sm:text-xl max-w-lg leading-relaxed"
         >
           {t("hero_subtitle")}
         </motion.p>
@@ -81,7 +81,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.65 }}
-          className="flex flex-wrap gap-px mt-12 border border-white/10 rounded-2xl overflow-hidden w-fit"
+          className="flex flex-wrap gap-px mt-10 border border-white/10 rounded-2xl overflow-hidden w-fit max-w-full"
         >
           {[
             { value: "19th C", label: t("stats.origins") },
@@ -89,7 +89,7 @@ function Hero() {
             { value: "7",      label: t("stats.days") },
             { value: "420km",  label: t("stats.route") },
           ].map((s, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur-sm px-6 py-4 text-center min-w-[100px]">
+            <div key={i} className="bg-white/5 backdrop-blur-sm px-4 py-3 sm:px-6 sm:py-4 text-center min-w-[72px] sm:min-w-[100px]">
               <div className="text-[#F5A623] text-xl font-bold">{s.value}</div>
               <div className="text-white/40 text-xs tracking-widest uppercase mt-0.5">{s.label}</div>
             </div>
@@ -233,7 +233,7 @@ function FeaturesSection() {
               <div className="w-8 h-px bg-[#F5A623]" />
               <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">{t("on_board_badge")}</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
               {t("features_title")}
             </h2>
           </div>
@@ -244,8 +244,7 @@ function FeaturesSection() {
 
         {/* Bento grid */}
         <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
-          style={{ gridTemplateRows: "repeat(2, 340px)" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:[grid-template-rows:repeat(2,340px)]"
         >
           {cards.map(({ key, icon: Icon, image }, i) => (
             <motion.div
@@ -254,11 +253,7 @@ function FeaturesSection() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.75, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative rounded-3xl overflow-hidden cursor-default"
-              style={{
-                gridRow: i === 0 ? "span 2" : undefined,
-                gridColumn: i === 3 ? "span 2" : undefined,
-              }}
+              className={`group relative rounded-3xl overflow-hidden cursor-default h-64 md:h-auto ${i === 0 ? "md:[grid-row:span_2]" : ""} ${i === 3 ? "md:[grid-column:span_2]" : ""}`}
             >
               {/* Photo background */}
               <Image
@@ -329,7 +324,7 @@ function VesselsSection({ locale }: { locale: string }) {
             <div className="w-8 h-px bg-[#F5A623]" />
             <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">{t("fleet_badge")}</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-[#1B2785] leading-tight max-w-xl">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-[#1B2785] leading-tight max-w-xl">
             {t("fleet_title")}
           </h2>
         </motion.div>
@@ -475,11 +470,11 @@ function CTASection({ locale }: { locale: string }) {
         className="relative z-10 max-w-3xl mx-auto text-center"
       >
         <div className="w-12 h-px bg-[#F5A623] mx-auto mb-8" />
-        <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
           {t("cta_title")}<br />
           <span className="text-[#F5A623] italic">{t("cta_title_highlight")}</span>
         </h2>
-        <p className="text-white/50 text-lg mb-10 max-w-md mx-auto">
+        <p className="text-white/50 text-base sm:text-lg mb-10 max-w-md mx-auto">
           {t("cta_subtitle")}
         </p>
         <Link

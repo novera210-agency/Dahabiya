@@ -143,11 +143,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+        <div className="border-t border-white/10 py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500 text-center md:text-start">
           <span>
             © {new Date().getFullYear()} Treasure Egypt Tours & Travel. {t("rights")}
           </span>
-          <span className="text-[#F5A623]/50 tracking-widest uppercase text-[10px]">
+          <span className="text-[#F5A623]/50 tracking-wide uppercase text-[10px] hidden sm:block">
             Luxor · Esna · Edfu · Kom Ombo · Aswan
           </span>
         </div>

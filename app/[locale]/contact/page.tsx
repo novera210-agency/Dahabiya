@@ -19,8 +19,8 @@ function PageHero() {
         backgroundSize: "80px 40px",
       }} />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">{t("hero_title")}</h1>
-        <p className="text-white/60 text-xl">{t("hero_subtitle")}</p>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4">{t("hero_title")}</h1>
+        <p className="text-white/60 text-base sm:text-xl">{t("hero_subtitle")}</p>
       </div>
     </section>
   );

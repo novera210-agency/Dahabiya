@@ -57,49 +57,74 @@ export const HeroParallax = ({
   );
 
   return (
-    <div
-      ref={ref}
-      style={{ position: "relative" }}
-      className="h-[300vh] py-40 overflow-hidden antialiased flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] bg-[#FDFAF5]"
-    >
-      <ParallaxHeader />
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
+    <>
+      {/* ── Mobile: simple image grid ── */}
+      <div className="md:hidden bg-[#FDFAF5] py-14 px-4">
+        <ParallaxHeader />
+        <div className="grid grid-cols-2 gap-3 mt-8">
+          {products.slice(0, 6).map((product) => (
+            <Link
+              key={product.title}
+              href={product.link}
+              className="relative rounded-2xl overflow-hidden aspect-[4/3] block"
+            >
+              <Image
+                src={product.thumbnail}
+                alt={product.title}
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Desktop: parallax ── */}
+      <div
+        ref={ref}
+        style={{ position: "relative" }}
+        className="hidden md:flex h-[300vh] py-40 overflow-hidden antialiased flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] bg-[#FDFAF5]"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
+        <ParallaxHeader />
+        <motion.div
+          style={{
+            rotateX,
+            rotateZ,
+            translateY,
+            opacity,
+          }}
+        >
+          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+            {firstRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateX}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
+          <motion.div className="flex flex-row mb-20 space-x-20">
+            {secondRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateXReverse}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
+          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+            {thirdRow.map((product) => (
+              <ProductCard
+                product={product}
+                translate={translateX}
+                key={product.title}
+              />
+            ))}
+          </motion.div>
         </motion.div>
-        <motion.div className="flex flex-row mb-20 space-x-20">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </>
   );
 };
 
@@ -113,11 +138,11 @@ export const ParallaxHeader = () => {
           {t("badge")}
         </span>
       </div>
-      <h2 className="text-4xl md:text-7xl font-bold text-[#1B2785] leading-tight">
+      <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-[#1B2785] leading-tight">
         {t("title")} <br />
         <span className="text-[#F5A623] italic">{t("title_highlight")}</span>
       </h2>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-gray-500 leading-relaxed">
+      <p className="max-w-2xl text-sm sm:text-base md:text-xl mt-6 text-gray-500 leading-relaxed">
         {t("subtitle")}
       </p>
     </div>

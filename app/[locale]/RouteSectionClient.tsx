@@ -65,7 +65,7 @@ export function RouteSectionClient({ locale }: { locale: string }) {
           }}
         >
           {/* ─ Wave + cities ─ */}
-          <div className="px-8 md:px-12 pt-10 pb-6">
+          <div className="px-4 md:px-12 pt-8 pb-6">
             <div className="flex items-center gap-4 md:gap-6">
 
               {/* Luxor */}

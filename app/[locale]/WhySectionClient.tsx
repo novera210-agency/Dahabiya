@@ -85,7 +85,7 @@ export function WhySectionClient() {
             <div className="h-px w-14 bg-gradient-to-l from-transparent to-[#F5A623]" />
           </div>
 
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
             {t('title')}
           </h2>
 
