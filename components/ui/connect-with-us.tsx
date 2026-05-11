@@ -8,7 +8,7 @@ const socialIcons = [
   {
     key: "facebook",
     label: "Facebook",
-    href: "https://www.facebook.com/Treasure.egypt.tours.and.travel",
+    href: "https://www.facebook.com/Treasure.egypt.tours.and.travel?rdid=T86QyQFQcz139zrK&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FPcFv66BS%2F",
     hoverBg: "#1877f2",
     hoverShadow: "rgba(24,119,242,0.55)",
     svg: (
@@ -20,7 +20,7 @@ const socialIcons = [
   {
     key: "instagram",
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/treasureegypttour?igsh=NHptNzdoYzA2bDU5",
     hoverBg: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
     hoverShadow: "rgba(214,36,159,0.55)",
     svg: (
