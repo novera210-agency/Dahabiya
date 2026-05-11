@@ -58,26 +58,45 @@ export const HeroParallax = ({
 
   return (
     <>
-      {/* ── Mobile: simple image grid ── */}
-      <div className="md:hidden bg-[#FDFAF5] py-14 px-4">
+      {/* ── Mobile: animated image grid ── */}
+      <div className="md:hidden bg-[#FDFAF5] pb-12 px-4">
         <ParallaxHeader />
-        <div className="grid grid-cols-2 gap-3 mt-8">
+        <motion.div
+          className="grid grid-cols-2 gap-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
+          }}
+        >
           {products.slice(0, 6).map((product) => (
-            <Link
+            <motion.div
               key={product.title}
-              href={product.link}
-              className="relative rounded-2xl overflow-hidden aspect-[4/3] block"
+              variants={{
+                hidden: { opacity: 0, y: 28, scale: 0.93 },
+                visible: {
+                  opacity: 1, y: 0, scale: 1,
+                  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+                },
+              }}
             >
-              <Image
-                src={product.thumbnail}
-                alt={product.title}
-                fill
-                className="object-cover"
-                sizes="50vw"
-              />
-            </Link>
+              <Link
+                href={product.link}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3] block"
+              >
+                <Image
+                  src={product.thumbnail}
+                  alt={product.title}
+                  fill
+                  className="object-cover"
+                  sizes="50vw"
+                />
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* ── Desktop: parallax ── */}
@@ -131,8 +150,14 @@ export const HeroParallax = ({
 export const ParallaxHeader = () => {
   const t = useTranslations("gallery_teaser_parallax");
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <div className="inline-flex items-center gap-2 bg-[#F5A623]/15 border border-[#F5A623]/30 rounded-full px-4 py-1.5 mb-6">
+    <motion.div
+      className="max-w-7xl relative mx-auto pt-12 pb-8 md:py-40 px-4 w-full left-0 top-0"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <div className="inline-flex items-center gap-2 bg-[#F5A623]/15 border border-[#F5A623]/30 rounded-full px-4 py-1.5 mb-5">
         <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" />
         <span className="text-[#F5A623] text-sm font-medium tracking-wide">
           {t("badge")}
@@ -142,10 +167,10 @@ export const ParallaxHeader = () => {
         {t("title")} <br />
         <span className="text-[#F5A623] italic">{t("title_highlight")}</span>
       </h2>
-      <p className="max-w-2xl text-sm sm:text-base md:text-xl mt-6 text-gray-500 leading-relaxed">
+      <p className="max-w-2xl text-sm sm:text-base md:text-xl mt-5 text-gray-500 leading-relaxed">
         {t("subtitle")}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
