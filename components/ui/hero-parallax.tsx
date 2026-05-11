@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export const HeroParallax = ({
   products,
@@ -103,22 +104,21 @@ export const HeroParallax = ({
 };
 
 export const ParallaxHeader = () => {
+  const t = useTranslations("gallery_teaser_parallax");
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <div className="inline-flex items-center gap-2 bg-[#F5A623]/15 border border-[#F5A623]/30 rounded-full px-4 py-1.5 mb-6">
         <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" />
         <span className="text-[#F5A623] text-sm font-medium tracking-wide">
-          Luxor → Aswan
+          {t("badge")}
         </span>
       </div>
       <h2 className="text-4xl md:text-7xl font-bold text-[#1B2785] leading-tight">
-        The Nile <br />
-        <span className="text-[#F5A623] italic">Awaits You</span>
+        {t("title")} <br />
+        <span className="text-[#F5A623] italic">{t("title_highlight")}</span>
       </h2>
       <p className="max-w-2xl text-base md:text-xl mt-8 text-gray-500 leading-relaxed">
-        From the towering columns of Karnak to the serene waters between
-        Luxor and Aswan — every moment on board a Dahabiya is a frame
-        worth keeping.
+        {t("subtitle")}
       </p>
     </div>
   );
