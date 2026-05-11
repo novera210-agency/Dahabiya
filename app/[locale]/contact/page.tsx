@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import InquiryForm from "@/components/InquiryForm";
@@ -66,7 +66,9 @@ function ContactInfo() {
   );
 }
 
-export default async function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <PageHero />

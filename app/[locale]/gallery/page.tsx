@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import GalleryPageClient from "@/components/GalleryPageClient";
 
@@ -8,6 +8,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { title: `${t("hero_title")} | Treasure Egypt` };
 }
 
-export default function GalleryPage() {
+export default async function GalleryPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return <GalleryPageClient />;
 }
