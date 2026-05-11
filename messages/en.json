@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "itinerary": "Itinerary",
+    "gallery": "Gallery",
+    "contact": "Book Now"
+  },
+  "hero": {
+    "badge": "Authentic Nile Experience",
+    "title": "Sail the Nile on a",
+    "titleHighlight": "Dahabiya",
+    "subtitle": "A boutique sailing journey between Luxor and Aswan — intimate, luxurious, and utterly timeless.",
+    "cta_book": "Book Your Journey",
+    "cta_explore": "Explore Itinerary"
+  },
+  "why": {
+    "title": "Why Choose a Dahabiya?",
+    "subtitle": "Far from the crowds of large cruise ships, a Dahabiya offers an experience unlike any other.",
+    "cards": {
+      "tranquility": {
+        "title": "Pure Tranquility",
+        "desc": "Glide silently on wind power, waking to peaceful river views, palm trees, and golden light."
+      },
+      "luxury": {
+        "title": "Boutique Luxury",
+        "desc": "Spacious cabins, personalized service, freshly prepared cuisine, and a relaxing sun deck."
+      },
+      "authentic": {
+        "title": "Authentic Access",
+        "desc": "Dock at hidden villages and smaller sites that large ships simply cannot reach."
+      },
+      "slowtravel": {
+        "title": "Slow Travel",
+        "desc": "No rushed schedules — absorb Egypt's beauty and history at a pace that feels truly human."
+      }
+    }
+  },
+  "route": {
+    "title": "The Journey",
+    "subtitle": "Sailing between Luxor and Aswan, two of Egypt's most historically rich cities.",
+    "luxor": "Luxor",
+    "aswan": "Aswan",
+    "view_itinerary": "View full itinerary",
+    "landmarks": {
+      "karnak": "Karnak Temple",
+      "valley": "Valley of the Kings",
+      "edfu": "Edfu Temple",
+      "komOmbo": "Kom Ombo Temple",
+      "villages": "Hidden Villages"
+    }
+  },
+  "quote": {
+    "text": "A Dahabiya Nile cruise is not just a trip — it is an experience that connects you with the soul of Egypt. Every moment feels special and unforgettable.",
+    "author": "Treasure Egypt Tours & Travel"
+  },
+  "gallery_teaser": {
+    "title": "Life on the Nile",
+    "subtitle": "Glimpses of the journey that awaits you.",
+    "cta": "View Full Gallery"
+  },
+  "cta_band": {
+    "title": "Ready to Sail?",
+    "subtitle": "Limited cabins available. Secure your place on the Nile.",
+    "button": "Make an Enquiry"
+  },
+  "about": {
+    "hero_title": "About the Dahabiya",
+    "hero_subtitle": "A vessel with centuries of history and a new era of luxury.",
+    "book_cta": "Book Your Dahabiya",
+    "what_title": "What Is a Dahabiya?",
+    "what_p1": "A Dahabiya is a traditional Egyptian sailing boat that dates back to the 19th century. The name is derived from the Arabic word for gold — a reflection of the gilded grandeur these vessels once carried.",
+    "what_p2": "Once used exclusively by royalty, diplomats, and elite explorers, the Dahabiya today provides a rare and intimate way to discover the Nile. Unlike massive cruise ships, a Dahabiya carries only a small number of guests, ensuring a deeply personal experience.",
+    "features_title": "Luxury Meets Simplicity",
+    "features": {
+      "cabins": { "title": "Spacious Cabins", "desc": "Each cabin is beautifully designed with private en-suite facilities, large windows framing river views, and fine Egyptian cotton linens." },
+      "deck": { "title": "Sun Deck", "desc": "Relax on the open upper deck as the Nile landscape unfolds — perfect for sunset cocktails or quiet morning reading." },
+      "cuisine": { "title": "Exceptional Cuisine", "desc": "Our chef prepares freshly made Egyptian and international dishes daily, using the finest local ingredients." },
+      "service": { "title": "High Staff Ratio", "desc": "With a dedicated crew serving only a handful of guests, every request is met with warmth and promptness." }
+    },
+    "eco_title": "Quieter & Greener",
+    "eco_text": "A Dahabiya relies primarily on wind and sail, making it one of the most environmentally respectful ways to travel the Nile. Quieter, cleaner, and more connected to nature."
+  },
+  "itinerary": {
+    "hero_title": "The Itinerary",
+    "hero_subtitle": "Seven days along the world's most legendary river.",
+    "route_label": "Luxor → Aswan",
+    "book_cta": "Book This Itinerary",
+    "days": {
+      "1": { "title": "Arrival in Luxor", "desc": "Welcome aboard. Settle into your cabin, enjoy a welcome dinner, and take in your first Nile sunset from the deck." },
+      "2": { "title": "Karnak & Luxor Temple", "desc": "Explore the colossal Karnak Temple complex and the magnificent Luxor Temple in the late afternoon light." },
+      "3": { "title": "Valley of the Kings", "desc": "Cross the West Bank to visit the Valley of the Kings, Hatshepsut's Temple, and the Colossi of Memnon." },
+      "4": { "title": "Sailing South — Hidden Villages", "desc": "A full day under sail. Stop at quiet riverside villages untouched by mass tourism and enjoy a local lunch." },
+      "5": { "title": "Edfu Temple", "desc": "Visit the best-preserved temple in Egypt, dedicated to Horus. Marvel at towering pylons and intricate carvings." },
+      "6": { "title": "Kom Ombo Temple", "desc": "Discover the unique double temple of Sobek and Haroeris, perched dramatically on the riverbank at sunset." },
+      "7": { "title": "Arrival in Aswan", "desc": "Arrive in Aswan and disembark. Optional extension to Abu Simbel or the Nubian villages available." }
+    },
+    "included_title": "What's Included",
+    "included": ["All meals on board", "Private guided excursions", "Airport/hotel transfers", "Entrance fees to listed sites", "Soft drinks, water & coffee"],
+    "excluded_title": "Not Included",
+    "excluded": ["International flights", "Travel insurance", "Alcoholic beverages", "Optional excursions", "Personal expenses"]
+  },
+  "gallery": {
+    "hero_title": "Gallery",
+    "hero_subtitle": "The Nile through our lens."
+  },
+  "contact": {
+    "hero_title": "Book Your Journey",
+    "hero_subtitle": "Tell us about your dream trip and we'll craft the perfect experience.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone / WhatsApp",
+      "dates": "Preferred Travel Dates",
+      "guests": "Number of Guests",
+      "message": "Your Message",
+      "submit": "Send Enquiry",
+      "sending": "Sending...",
+      "success": "Thank you! We'll be in touch within 24 hours.",
+      "error": "Something went wrong. Please try again or email us directly."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "email_label": "Email",
+      "phone_label": "Phone",
+      "whatsapp_label": "WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Discover the Nile the way it was meant to be experienced.",
+    "links_title": "Quick Links",
+    "contact_title": "Contact Us",
+    "rights": "All rights reserved."
+  }
+}

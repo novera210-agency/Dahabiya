@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #1B2785;
+  --gold: #F5A623;
+  --cream: #FDFAF5;
+  --navy-dark: #111a60;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-navy-dark: var(--navy-dark);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: #1a1a1a;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+[dir="rtl"] body {
+  font-family: 'Segoe UI', 'Noto Kufi Arabic', Arial, sans-serif;
+}
+
+.font-arabic {
+  font-family: 'Noto Kufi Arabic', 'Arabic UI Text', Arial, sans-serif;
+}
+
+@keyframes icon-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20%       { transform: translateX(-4px) rotate(-5deg); }
+  40%       { transform: translateX(4px) rotate(5deg); }
+  60%       { transform: translateX(-4px) rotate(-5deg); }
+  80%       { transform: translateX(4px) rotate(5deg); }
+}
+
+.social-icon-btn:hover svg {
+  animation: icon-shake 0.5s ease;
+}
+
+.social-icon-btn .icon-circle {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.social-icon-btn:hover .icon-circle {
+  transform: translateY(-10px) scale(1.1);
+}
+
+.social-icon-btn .icon-label {
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(0);
+}
+
+.social-icon-btn:hover .icon-label {
+  opacity: 1;
+  transform: translateY(4px);
 }
