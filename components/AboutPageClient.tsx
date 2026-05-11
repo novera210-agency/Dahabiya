@@ -113,7 +113,7 @@ function OriginSection() {
   return (
     <section className="bg-white overflow-hidden">
       {/* Editorial intro */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-28 pb-12 sm:pb-16">
         <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 items-start">
           {/* Left: large decade + text */}
           <motion.div
@@ -129,12 +129,12 @@ function OriginSection() {
 
             <motion.div
               variants={fadeUp}
-              className="text-[120px] md:text-[160px] font-bold text-[#1B2785]/5 leading-none select-none -mt-4 -mb-8"
+              className="text-[72px] sm:text-[110px] md:text-[140px] font-bold text-[#1B2785]/5 leading-none select-none -mt-2 -mb-6 overflow-hidden"
             >
               1800s
             </motion.div>
 
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-[#1B2785] leading-tight mb-8">
+            <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B2785] leading-tight mb-8">
               {t("what_title")}
             </motion.h2>
 
@@ -192,7 +192,7 @@ function OriginSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#060d2e]/70 via-transparent to-[#060d2e]/40" />
         <div className="absolute inset-0 flex items-center px-8 md:px-20">
           <blockquote className="max-w-xl">
-            <p className="text-3xl md:text-4xl font-light text-white italic leading-snug">
+            <p className="text-xl sm:text-3xl md:text-4xl font-light text-white italic leading-snug">
               "{t("quote_text")}"
             </p>
             <footer className="mt-5 text-[#F5A623] text-sm font-medium tracking-widest uppercase">
@@ -217,7 +217,7 @@ function FeaturesSection() {
   ] as const;
 
   return (
-    <section className="py-28 px-6 lg:px-8 bg-[#060d2e] overflow-hidden">
+    <section className="py-16 sm:py-28 px-6 lg:px-8 bg-[#060d2e] overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
@@ -226,7 +226,7 @@ function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6"
+          className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6"
         >
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -311,7 +311,7 @@ function VesselsSection({ locale }: { locale: string }) {
   ] as const;
 
   return (
-    <section className="py-28 px-6 lg:px-8 bg-white overflow-hidden">
+    <section className="py-16 sm:py-28 px-6 lg:px-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -329,7 +329,7 @@ function VesselsSection({ locale }: { locale: string }) {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
           {vessels.map((v, i) => (
             <motion.div
               key={v.key}
@@ -337,7 +337,7 @@ function VesselsSection({ locale }: { locale: string }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.75, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative rounded-3xl overflow-hidden aspect-[3/4] cursor-pointer"
+              className={`group relative rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer aspect-[3/4] ${i === 2 ? "col-span-2 md:col-span-1 aspect-[16/9] md:aspect-[3/4]" : ""}`}
             >
               <Image
                 src={v.src}
@@ -355,11 +355,11 @@ function VesselsSection({ locale }: { locale: string }) {
               </div>
 
               {/* Bottom content */}
-              <div className="absolute bottom-0 left-0 right-0 p-7">
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-7">
                 <div className="w-8 h-0.5 mb-4 transition-all duration-300 group-hover:w-14"
                   style={{ background: "#F5A623" }} />
-                <h3 className="text-2xl font-bold text-white mb-1">{t(`vessels.${v.key}.name`)}</h3>
-                <p className="text-white/50 text-sm">{t(`vessels.${v.key}.caption`)}</p>
+                <h3 className="text-base md:text-2xl font-bold text-white mb-1">{t(`vessels.${v.key}.name`)}</h3>
+                <p className="text-white/50 text-xs md:text-sm">{t(`vessels.${v.key}.caption`)}</p>
 
                 <Link
                   href={`/${locale}/gallery`}
@@ -381,7 +381,7 @@ function EcoSection() {
   const t = useTranslations("about");
 
   return (
-    <section className="bg-[#060d2e] py-28 px-6 lg:px-8 overflow-hidden relative">
+    <section className="bg-[#060d2e] py-16 sm:py-28 px-6 lg:px-8 overflow-hidden relative">
       {/* bg glow */}
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 60% 50% at 80% 50%, rgba(245,166,35,0.08) 0%, transparent 70%)" }} />
@@ -397,7 +397,7 @@ function EcoSection() {
             <div className="w-8 h-px bg-[#F5A623]" />
             <span className="text-[#F5A623] text-sm font-medium tracking-widest uppercase">{t("philosophy_badge")}</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-8">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-8">
             {t("eco_title")}
           </h2>
           <p className="text-white/50 text-lg leading-relaxed mb-10">

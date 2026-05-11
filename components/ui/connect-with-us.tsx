@@ -96,7 +96,7 @@ export function SocialConnect() {
 
         {/* Glowing social card */}
         <div
-          className="rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl p-10 transition-all duration-500 hover:scale-[1.02]"
+          className="rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl p-6 sm:p-10 transition-all duration-500 hover:scale-[1.02]"
           style={{
             boxShadow:
               "0 0 50px rgba(245,166,35,0.18), 0 0 100px rgba(245,166,35,0.08)",

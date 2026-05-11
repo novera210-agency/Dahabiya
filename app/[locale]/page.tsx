@@ -105,8 +105,8 @@ function GalleryTeaser({ locale }: { locale: string }) {
     <section className="py-24 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1B2785] mb-4">{t("title")}</h2>
-          <p className="text-gray-500 text-lg">{t("subtitle")}</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B2785] mb-4">{t("title")}</h2>
+          <p className="text-gray-500 text-base sm:text-lg">{t("subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
@@ -150,8 +150,8 @@ function CTABand({ locale }: { locale: string }) {
   return (
     <section className="py-20 px-4 bg-gradient-to-r from-[#F5A623] to-[#e09410]">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">{t("title")}</h2>
-        <p className="text-white/80 text-lg mb-8">{t("subtitle")}</p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">{t("title")}</h2>
+        <p className="text-white/80 text-base sm:text-lg mb-8">{t("subtitle")}</p>
         <Link
           href={`/${locale}/contact`}
           className="inline-flex items-center gap-2 bg-[#1B2785] hover:bg-[#111a60] text-white font-semibold px-10 py-4 rounded-full transition-all text-lg shadow-xl"
