@@ -66,7 +66,112 @@ export function RouteSectionClient({ locale }: { locale: string }) {
         >
           {/* ─ Wave + cities ─ */}
           <div className="px-4 md:px-12 pt-8 pb-6">
-            <div className="flex items-center gap-4 md:gap-6">
+
+            {/* Mobile: vertical stack */}
+            <div className="flex md:hidden flex-col gap-4">
+              {/* Luxor row */}
+              <div className="flex items-center gap-3">
+                <div className="relative w-14 h-14 flex-shrink-0">
+                  <span className="absolute inset-0 rounded-full bg-[#1B2785]/10 animate-ping"
+                    style={{ animationDuration: '2.8s' }} />
+                  <div className="relative w-full h-full rounded-full bg-[#1B2785] flex items-center justify-center shadow-lg shadow-[#1B2785]/20">
+                    <Anchor size={18} className="text-[#F5A623]" />
+                  </div>
+                </div>
+                <div>
+                  <p className="font-bold text-[#1B2785] text-base leading-tight">{t('luxor')}</p>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5">{t('departure')}</p>
+                </div>
+              </div>
+
+              {/* Wave — full width on mobile */}
+              <div className="relative w-full" style={{ height: 110 }}>
+                <svg
+                  viewBox="0 0 600 80"
+                  preserveAspectRatio="none"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ overflow: 'visible' }}
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient id="waveGradM" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%"   stopColor="#1B2785" />
+                      <stop offset="55%"  stopColor="#3B82F6" />
+                      <stop offset="100%" stopColor="#F5A623" />
+                    </linearGradient>
+                    <linearGradient id="waterFillM" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%"   stopColor="#3B82F6" stopOpacity="0.18" />
+                      <stop offset="100%" stopColor="#1B2785" stopOpacity="0.04" />
+                    </linearGradient>
+                    <filter id="shipGlowM" x="-80%" y="-80%" width="260%" height="260%">
+                      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur" />
+                      <feFlood floodColor="#F5A623" floodOpacity="0.5" result="color" />
+                      <feComposite in="color" in2="blur" operator="in" result="glow" />
+                      <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                    <filter id="waveGlowM">
+                      <feGaussianBlur stdDeviation="1.2" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <path d={`${WAVE} L 600 80 L 0 80 Z`} fill="url(#waterFillM)" />
+                  <path d={WAVE_SHADOW} fill="none" stroke="#1B2785" strokeWidth="1" strokeOpacity="0.1" />
+                  <path id="routeWavePathM" d={WAVE} fill="none" stroke="url(#waveGradM)" strokeWidth="2.8" filter="url(#waveGlowM)" />
+                  <path d={WAVE} fill="none" stroke="#60A5FA" strokeWidth="1.5" strokeOpacity="0.45" strokeDasharray="10 8">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.4s" repeatCount="indefinite" />
+                  </path>
+                  {[150, 300, 450].map((cx, i) => (
+                    <circle key={cx} cx={cx} cy={40} r={2.5} fill="#F5A623" opacity={0.5}>
+                      <animate attributeName="opacity" values="0.15;0.7;0.15" dur={`${2 + i * 0.5}s`} begin={`${i * 0.6}s`} repeatCount="indefinite" />
+                      <animate attributeName="r" values="1.5;3.5;1.5" dur={`${2 + i * 0.5}s`} begin={`${i * 0.6}s`} repeatCount="indefinite" />
+                    </circle>
+                  ))}
+                  <g filter="url(#shipGlowM)">
+                    <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+                      <mpath href="#routeWavePathM" />
+                    </animateMotion>
+                    <g>
+                      <path d="M -11 0 Q 0 6.5 11 0 L 8 9.5 Q 0 11.5 -8 9.5 Z" fill="#1B2785" />
+                      <line x1="0" y1="-24" x2="0" y2="0" stroke="#1B2785" strokeWidth="2" strokeLinecap="round" />
+                      <line x1="0" y1="-24" x2="13" y2="0" stroke="#0A0F3D" strokeWidth="1.3" strokeLinecap="round" />
+                      <path d="M 0 -24 L 13 0 L 0 0 Z" fill="#F5A623" opacity="0.95" />
+                      <path d="M 0 -15 L -8 0 L 0 0 Z" fill="#F5A623" opacity="0.65" />
+                      <path d="M 0 -24 L 5 -20 L 0 -16 Z" fill="#e09410" />
+                      <circle cx="-13" cy="6" r="1.2" fill="#60A5FA" opacity="0.5">
+                        <animate attributeName="opacity" values="0.5;0;0.5" dur="1.2s" repeatCount="indefinite" />
+                      </circle>
+                      <circle cx="-17" cy="7" r="0.8" fill="#60A5FA" opacity="0.3">
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="1.2s" begin="0.4s" repeatCount="indefinite" />
+                      </circle>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+              {/* Aswan row */}
+              <div className="flex items-center gap-3 justify-end">
+                <div>
+                  <p className="font-bold text-[#1B2785] text-base leading-tight text-end">{t('aswan')}</p>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-wider mt-0.5 text-end">{t('arrival')}</p>
+                </div>
+                <div className="relative w-14 h-14 flex-shrink-0">
+                  <span className="absolute inset-0 rounded-full bg-[#F5A623]/25 animate-ping"
+                    style={{ animationDuration: '2.8s', animationDelay: '0.9s' }} />
+                  <div className="relative w-full h-full rounded-full bg-[#F5A623] flex items-center justify-center shadow-lg shadow-[#F5A623]/30">
+                    <Compass size={18} className="text-white" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop: horizontal row */}
+            <div className="hidden md:flex items-center gap-4 md:gap-6">
 
               {/* Luxor */}
               <div className="flex-shrink-0 text-center" style={{ minWidth: 72 }}>
